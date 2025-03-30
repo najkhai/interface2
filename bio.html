@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #72c2ff, #86f0ff);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        #changing-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+            height: 60px;
+            transition: opacity 0.5s ease;
+        }
+        
+        .profile-pic {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .per {
+            background-color: rgb(244, 255, 251);
+            color: rgb(0, 0, 0);
+            border: 2px solid #3498db;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .per:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        h2 {
+            color: #2980b9 !important;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: white;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 8px 10px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="pasfoto.jpeg" alt="Profile Picture" class="profile-pic">
+        <div id="changing-text">Welcome to my page</div>
+    </div>
+    
+    <div class="per">
+        <h2>Nama</h2>
+        <p>Najmah Khairunnisa</p>
+    </div>
+    
+    <div class="per">
+        <h2>Tempat, Tanggal Lahir</h2>
+        <p>Jakarta, 11 September 2005</p>
+    </div>
+    
+    <div class="per">
+        <h2>Alamat</h2>
+        <p><a href="https://maps.app.goo.gl/AgRNKFwKXm5wwxXy5" target="_blank">Jl. Terusan Cikampek No.6, Penanggungan</a></p>
+    </div>
+    
+    <div class="per">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah mahasiswa <span style="font-family: Arial; font-weight: bold; color: #2c3e50;">S1 Fakultas Ilmu Komputer</span> di Universitas Brawijaya.</p>
+    </div>
+    
+    <div class="per">
+        <h2>Hobi</h2>
+        <p>Saat ini saya senang menghabiskan waktu luang dengan <b>menonton film</b> kemudian membuat <i>ulasan</i> tentang film itu.</p>
+    </div>
+    
+    <div class="per">
+        <h2>Fokus Saya</h2>
+        <p>Saya meletakkan fokus saya pada pencapaian yang bisa saya manfaatkan untuk membantu mencapai target akhir saya.</p>
+    </div>
+    
+    <div class="per">
+        <h2>Saya memiliki 2 kucing</h2>
+        <table>
+            <tr>
+                <th>Jenis</th>
+                <th>Nama</th>
+            </tr>
+            <tr>
+                <td>Persia</td>
+                <td>Cici</td>
+            </tr>
+            <tr>
+                <td>Blasteran Angora</td>
+                <td>Magnum</td>
+            </tr>
+        </table>
+        
+        <h3>Hal-hal yang saya sukai tentang kucing saya:</h3>
+        <ul>
+            <li>Mereka sangat manja dan suka bermain.</li>
+            <li>Cici suka tidur di pangkuan saya.</li>
+            <li>Magnum sangat aktif dan suka berlari-lari di rumah.</li>
+        </ul>
+        
+        <h3>Perawatan kucing yang saya lakukan:</h3>
+        <ol>
+            <li>Memberikan makanan berkualitas tinggi.</li>
+            <li>Rutin membawa mereka ke dokter hewan.</li>
+            <li>Membersihkan bulu dan kandangnya secara rutin.</li>
+            <li>Memberikan vitamin dan suplemen yang dibutuhkan.</li>
+        </ol>
+    </div>
+
+    <script>
+
+        const texts = ["Welcome to My Page", "This is My Profile"];
+        let count = 0;
+        const element = document.getElementById("changing-text");
+        
+        function changeText() {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                count = (count + 1) % texts.length;
+                element.textContent = texts[count];
+                element.style.opacity = 1;
+            }, 500);
+        }
+
+        setTimeout(changeText, 2000);
+
+        setInterval(changeText, 4000);
+    </script>
+</body>
+</html>
